@@ -818,3 +818,1121 @@ a{
     </div>
 
                   </section>
+<!-- =========================================================
+     PART 2 — SHOP / PRODUCT CATALOGUE
+     Paste this directly BELOW PART 1
+========================================================= -->
+
+<style>
+
+/* ================= SHOP SECTION ================= */
+
+.shop-section{
+    padding:58px 16px 30px;
+    background:#f8f6ed;
+}
+
+.shop-container{
+    width:100%;
+    max-width:1180px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:650px;
+    margin:0 auto 28px;
+}
+
+.section-label{
+    color:#5b814e;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.section-heading h2{
+    font-family:Georgia,serif;
+    color:#173e27;
+    font-size:31px;
+    line-height:1.15;
+    margin-bottom:10px;
+}
+
+.section-heading p{
+    color:#758076;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* ================= CONCERN CATEGORIES ================= */
+
+.concern-row{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:3px 1px 15px;
+    scrollbar-width:none;
+    margin-bottom:25px;
+}
+
+.concern-row::-webkit-scrollbar{
+    display:none;
+}
+
+.concern-card{
+    min-width:112px;
+    height:105px;
+    border:1px solid #e0e8dc;
+    background:#fff;
+    border-radius:18px;
+    padding:12px 8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    transition:.25s;
+    box-shadow:0 5px 18px rgba(28,68,40,.04);
+    color:#2a4933;
+}
+
+.concern-card:active{
+    transform:scale(.96);
+}
+
+.concern-card.active{
+    background:#e5efdf;
+    border-color:#9cbb91;
+    box-shadow:0 8px 20px rgba(36,93,52,.09);
+}
+
+.concern-icon{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef5e9;
+    font-size:21px;
+}
+
+.concern-card strong{
+    font-size:10px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.concern-card span{
+    color:#8a938b;
+    font-size:8px;
+}
+
+/* ================= PRODUCT TOOLBAR ================= */
+
+.product-toolbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin:4px 0 18px;
+}
+
+.result-text{
+    color:#6e796f;
+    font-size:12px;
+}
+
+.result-text strong{
+    color:#244931;
+}
+
+.sort-select{
+    border:1px solid #dce5d8;
+    background:#fff;
+    color:#405743;
+    border-radius:10px;
+    padding:9px 10px;
+    font-size:10px;
+    outline:none;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:13px;
+}
+
+.product-card{
+    background:#fff;
+    border:1px solid #e8ebe4;
+    border-radius:19px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 7px 22px rgba(27,67,38,.05);
+    transition:transform .25s,box-shadow .25s;
+}
+
+.product-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 13px 28px rgba(27,67,38,.09);
+}
+
+.product-image{
+    height:178px;
+    position:relative;
+    overflow:hidden;
+    background:#edf3e7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.product-image.green-bg{
+    background:linear-gradient(145deg,#e5efdd,#f6f3df);
+}
+
+.product-image.cream-bg{
+    background:linear-gradient(145deg,#f4eedc,#e5efdc);
+}
+
+.product-image.peach-bg{
+    background:linear-gradient(145deg,#f5e7dc,#e9f0df);
+}
+
+.product-image.dark-bg{
+    background:linear-gradient(145deg,#dbe8d8,#c8dbc9);
+}
+
+.product-art{
+    width:112px;
+    height:135px;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.bottle{
+    width:67px;
+    height:102px;
+    border-radius:9px 9px 15px 15px;
+    background:linear-gradient(
+        90deg,
+        #27653b 0%,
+        #79a752 48%,
+        #275f37 100%
+    );
+    box-shadow:8px 12px 20px rgba(30,65,37,.18);
+    position:relative;
+}
+
+.bottle.pale{
+    background:linear-gradient(
+        90deg,
+        #e7e2c8,
+        #fffdf0,
+        #d9d7ba
+    );
+}
+
+.bottle.clear{
+    background:linear-gradient(
+        90deg,
+        #65a56a,
+        #a6cb72,
+        #3f814b
+    );
+}
+
+.bottle.pink{
+    background:linear-gradient(
+        90deg,
+        #d59c85,
+        #f0c8ae,
+        #b87567
+    );
+}
+
+.bottle-cap{
+    width:42px;
+    height:17px;
+    border-radius:5px 5px 2px 2px;
+    background:#b3914e;
+    position:absolute;
+    top:-13px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.bottle-pump{
+    width:48px;
+    height:15px;
+    border-radius:5px;
+    background:#b48e4b;
+    position:absolute;
+    top:-13px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.bottle-pump:after{
+    content:"";
+    width:24px;
+    height:6px;
+    background:#b48e4b;
+    position:absolute;
+    right:-17px;
+    top:0;
+    border-radius:0 5px 5px 0;
+}
+
+.jar{
+    width:105px;
+    height:72px;
+    border-radius:10px 10px 20px 20px;
+    background:linear-gradient(
+        90deg,
+        #d8d6bf,
+        #faf7e9,
+        #c9c8ae
+    );
+    box-shadow:7px 12px 18px rgba(35,66,38,.15);
+    position:relative;
+}
+
+.jar.green{
+    background:linear-gradient(
+        90deg,
+        #dce8c9,
+        #fffced,
+        #c8d9bb
+    );
+}
+
+.jar-lid{
+    position:absolute;
+    width:108px;
+    height:18px;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:6px 6px 3px 3px;
+    background:#a9ad8c;
+}
+
+.jar-label{
+    position:absolute;
+    width:65px;
+    height:42px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-42%);
+    background:#f5f0d8;
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:#2d5a35;
+    text-align:center;
+}
+
+.jar-label strong{
+    font-family:Georgia,serif;
+    font-size:7px;
+}
+
+.jar-label span{
+    font-size:5px;
+    margin-top:3px;
+    letter-spacing:.5px;
+}
+
+.product-leaves{
+    position:absolute;
+    font-size:48px;
+    opacity:.20;
+}
+
+.product-leaves.left{
+    left:2px;
+    bottom:2px;
+    transform:rotate(-25deg);
+}
+
+.product-leaves.right{
+    right:2px;
+    top:10px;
+    transform:rotate(25deg);
+}
+
+/* ================= PRODUCT BADGES ================= */
+
+.product-badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:4;
+    background:#1c5632;
+    color:#fff;
+    border-radius:20px;
+    padding:5px 8px;
+    font-size:8px;
+    font-weight:700;
+}
+
+.product-badge.new{
+    background:#b47e32;
+}
+
+.product-badge.combo{
+    background:#537e46;
+}
+
+.wish-small{
+    position:absolute;
+    top:9px;
+    right:9px;
+    z-index:5;
+    width:31px;
+    height:31px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.93);
+    color:#47604c;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.07);
+}
+
+.wish-small.active{
+    color:#b54c4c;
+}
+
+/* ================= PRODUCT INFO ================= */
+
+.product-info{
+    padding:13px 12px 14px;
+}
+
+.product-category{
+    color:#819083;
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:.7px;
+    margin-bottom:5px;
+}
+
+.product-name{
+    color:#24452e;
+    font-family:Georgia,serif;
+    font-size:14px;
+    line-height:1.25;
+    min-height:35px;
+}
+
+.product-rating{
+    margin:7px 0;
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.stars{
+    color:#c4963d;
+    font-size:9px;
+    letter-spacing:-1px;
+}
+
+.review-count{
+    color:#929a93;
+    font-size:8px;
+}
+
+.product-price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:4px;
+    margin-top:7px;
+}
+
+.price{
+    color:#183f27;
+    font-size:15px;
+    font-weight:800;
+}
+
+.old-price{
+    color:#a5aaa5;
+    text-decoration:line-through;
+    font-size:9px;
+    margin-left:3px;
+}
+
+.add-product{
+    border:none;
+    width:35px;
+    height:35px;
+    border-radius:11px;
+    background:#e4efdf;
+    color:#205331;
+    font-size:18px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.add-product:active{
+    transform:scale(.9);
+}
+
+/* ================= VIEW DETAILS ================= */
+
+.view-details{
+    width:100%;
+    margin-top:9px;
+    min-height:34px;
+    border-radius:10px;
+    border:1px solid #dce6d9;
+    background:#fff;
+    color:#31523a;
+    font-size:9px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.view-details:hover{
+    background:#edf4e9;
+}
+
+/* ================= LOAD / EMPTY ================= */
+
+.empty-products{
+    grid-column:1/-1;
+    display:none;
+    padding:45px 20px;
+    text-align:center;
+    background:#fff;
+    border-radius:20px;
+    border:1px dashed #d4dfd0;
+}
+
+.empty-products.show{
+    display:block;
+}
+
+.empty-products div{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.empty-products strong{
+    color:#254a31;
+    font-family:Georgia,serif;
+    display:block;
+    margin-bottom:5px;
+}
+
+.empty-products p{
+    color:#7c867e;
+    font-size:11px;
+}
+
+/* ================= VIEW ALL ================= */
+
+.view-all-wrap{
+    text-align:center;
+    padding:26px 0 8px;
+}
+
+.view-all-btn{
+    border:1px solid #cfdccc;
+    background:transparent;
+    color:#2c5737;
+    min-height:43px;
+    padding:0 22px;
+    border-radius:12px;
+    font-size:11px;
+    font-weight:800;
+}
+
+/* ================= FEATURED BANNER ================= */
+
+.feature-banner{
+    margin-top:38px;
+    border-radius:25px;
+    overflow:hidden;
+    min-height:245px;
+    background:
+        radial-gradient(circle at 85% 15%,rgba(166,203,127,.35),transparent 27%),
+        linear-gradient(135deg,#16472b,#285e38);
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.feature-banner:before{
+    content:"";
+    position:absolute;
+    width:210px;
+    height:210px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+    right:-80px;
+    top:-70px;
+}
+
+.feature-banner:after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:50%;
+    left:-75px;
+    bottom:-70px;
+}
+
+.feature-content{
+    position:relative;
+    z-index:2;
+    padding:28px 22px;
+    max-width:600px;
+}
+
+.feature-small{
+    color:#b9d5a9;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.feature-content h3{
+    color:#fff;
+    font-family:Georgia,serif;
+    font-size:27px;
+    line-height:1.15;
+    margin-bottom:9px;
+}
+
+.feature-content p{
+    color:#d5e2d4;
+    font-size:11px;
+    line-height:1.6;
+    max-width:390px;
+}
+
+.feature-btn{
+    margin-top:15px;
+    background:#f6f1dc;
+    color:#245334;
+    border:none;
+    min-height:40px;
+    padding:0 17px;
+    border-radius:11px;
+    font-size:10px;
+    font-weight:800;
+}
+
+.feature-decoration{
+    position:absolute;
+    right:20px;
+    bottom:-10px;
+    font-size:110px;
+    opacity:.18;
+    transform:rotate(-12deg);
+}
+
+/* ================= PRODUCT QUICK MODAL ================= */
+
+.quick-modal{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(8,28,16,.65);
+    backdrop-filter:blur(7px);
+    display:none;
+    align-items:flex-end;
+    justify-content:center;
+    padding:0;
+}
+
+.quick-modal.open{
+    display:flex;
+}
+
+.quick-box{
+    width:100%;
+    max-width:560px;
+    max-height:91vh;
+    overflow-y:auto;
+    background:#fdfcf5;
+    border-radius:26px 26px 0 0;
+    padding:16px;
+    animation:slideUp .28s ease;
+}
+
+@keyframes slideUp{
+    from{
+        transform:translateY(100%);
+        opacity:.5;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.modal-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:13px;
+}
+
+.modal-top span{
+    color:#5f6d62;
+    font-size:10px;
+    font-weight:700;
+}
+
+.close-modal{
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:50%;
+    background:#edf2e9;
+    color:#35533d;
+    font-size:20px;
+}
+
+.modal-product-image{
+    width:100%;
+    height:240px;
+    border-radius:20px;
+    background:linear-gradient(145deg,#e7efdf,#f6f1df);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.modal-product-image .product-art{
+    transform:scale(1.25);
+}
+
+.modal-details{
+    padding:17px 3px 7px;
+}
+
+.modal-category{
+    color:#70826f;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.modal-details h3{
+    font-family:Georgia,serif;
+    color:#183f27;
+    font-size:25px;
+    margin:6px 0;
+}
+
+.modal-stars{
+    color:#c3963d;
+    font-size:12px;
+}
+
+.modal-desc{
+    color:#68766b;
+    font-size:12px;
+    line-height:1.7;
+    margin:12px 0;
+}
+
+.modal-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+    margin:12px 0 16px;
+}
+
+.modal-point{
+    background:#eef4e9;
+    border-radius:10px;
+    padding:9px;
+    color:#34543b;
+    font-size:9px;
+}
+
+.modal-price{
+    color:#173f27;
+    font-size:22px;
+    font-weight:800;
+    margin-bottom:13px;
+}
+
+.modal-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+}
+
+.modal-cart,
+.modal-whatsapp{
+    min-height:46px;
+    border:none;
+    border-radius:12px;
+    font-size:10px;
+    font-weight:800;
+}
+
+.modal-cart{
+    background:#e4efdf;
+    color:#244e31;
+}
+
+.modal-whatsapp{
+    background:#1d7a43;
+    color:#fff;
+}
+
+/* ================= SEARCH PANEL ================= */
+
+.search-panel{
+    position:fixed;
+    inset:0;
+    background:rgba(248,246,237,.98);
+    z-index:4000;
+    display:none;
+    padding:18px;
+}
+
+.search-panel.open{
+    display:block;
+}
+
+.search-inner{
+    width:100%;
+    max-width:650px;
+    margin:auto;
+}
+
+.search-head{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-bottom:25px;
+}
+
+.search-close{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#e8f0e4;
+    color:#294b34;
+    font-size:20px;
+}
+
+.search-input-wrap{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#fff;
+    border:1px solid #dbe5d7;
+    border-radius:14px;
+    padding:0 13px;
+    height:48px;
+    flex:1;
+}
+
+.search-input-wrap input{
+    border:none;
+    outline:none;
+    width:100%;
+    background:transparent;
+    color:#294931;
+    font-size:13px;
+}
+
+.search-title{
+    color:#1c4429;
+    font-family:Georgia,serif;
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.search-help{
+    color:#7c867e;
+    font-size:11px;
+    line-height:1.6;
+}
+
+@media(min-width:700px){
+
+    .shop-section{
+        padding-top:75px;
+    }
+
+    .section-heading h2{
+        font-size:39px;
+    }
+
+    .concern-row{
+        justify-content:center;
+        overflow:visible;
+    }
+
+    .concern-card{
+        min-width:130px;
+        height:115px;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:18px;
+    }
+
+    .product-image{
+        height:235px;
+    }
+
+    .product-art{
+        transform:scale(1.12);
+    }
+
+    .quick-modal{
+        align-items:center;
+        padding:20px;
+    }
+
+    .quick-box{
+        border-radius:25px;
+        max-height:90vh;
+    }
+
+    .modal-product-image{
+        height:280px;
+    }
+}
+
+@media(min-width:1000px){
+
+    .product-grid{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+
+    .feature-banner{
+        min-height:290px;
+    }
+
+    .feature-content{
+        padding:40px;
+    }
+
+    .feature-content h3{
+        font-size:35px;
+    }
+}
+
+</style>
+
+
+<!-- ================= SHOP SECTION ================= -->
+
+<section class="shop-section" id="products">
+
+    <div class="shop-container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Explore Our Collection
+            </div>
+
+            <h2>
+                Herbal care for every skin routine.
+            </h2>
+
+            <p>
+                Discover everyday skincare essentials inspired by
+                nature and designed to fit beautifully into your routine.
+            </p>
+
+        </div>
+
+
+        <!-- ================= CONCERNS ================= -->
+
+        <div class="concern-row" id="concernRow">
+
+            <button class="concern-card active"
+                    data-filter="all">
+
+                <div class="concern-icon">🌿</div>
+
+                <strong>All Products</strong>
+
+                <span>Collection</span>
+
+            </button>
+
+
+            <button class="concern-card"
+                    data-filter="face">
+
+                <div class="concern-icon">✨</div>
+
+                <strong>Face Care</strong>
+
+                <span>Glow & care</span>
+
+            </button>
+
+
+            <button class="concern-card"
+                    data-filter="tan">
+
+                <div class="concern-icon">☀️</div>
+
+                <strong>Tan Care</strong>
+
+                <span>Fresh look</span>
+
+            </button>
+
+
+            <button class="concern-card"
+                    data-filter="pigmentation">
+
+                <div class="concern-icon">🌱</div>
+
+                <strong>Dark Spots</strong>
+
+                <span>Care routine</span>
+
+            </button>
+
+
+            <button class="concern-card"
+                    data-filter="combo">
+
+                <div class="concern-icon">🎁</div>
+
+                <strong>Combos</strong>
+
+                <span>Complete care</span>
+
+            </button>
+
+
+            <button class="concern-card"
+                    data-filter="body">
+
+                <div class="concern-icon">🧼</div>
+
+                <strong>Body Care</strong>
+
+                <span>Daily care</span>
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= TOOLBAR ================= -->
+
+        <div class="product-toolbar">
+
+            <div class="result-text">
+                Showing <strong id="resultCount">8</strong> products
+            </div>
+
+            <select class="sort-select" id="sortProducts">
+                <option value="default">Sort: Featured</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+            </select>
+
+        </div>
+
+
+        <!-- ================= PRODUCT GRID ================= -->
+
+        <div class="product-grid" id="productGrid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <article class="product-card"
+                     data-category="face"
+                     data-name="Avocado Face Wash"
+                     data-price="399"
+                     data-old="499">
+
+                <div class="product-image green-bg">
+
+                    <span class="product-badge">BESTSELLER</span>
+
+                    <button class="wish-small"
+                            aria-label="Wishlist"
+                            onclick="toggleWishlist(this)">
+                        ♡
+                    </button>
+
+                    <div class="product-leaves left">🍃</div>
+
+                    <div class="product-art">
+
+                        <div class="bottle clear">
+
+                            <div class="bottle-pump"></div>
+
+                            <div class="jar-label">
+                                <strong>Krupaherbs</strong>
+                                <span>AVOCADO</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        Face Care
+                    </div>
+
+                    <div class="product-name">
+                        Avocado Face Wash
+                    </div>
+
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="review-count">(24)</span>
+                    </div>
+
+                    <div class="product-price-row">
+
+                        <div>
+                            <span class="price">₹399</span>
+                            <span class="old-price">₹499</span>
+                        </div>
+
+                        <button class="add-product"
+                                onc
